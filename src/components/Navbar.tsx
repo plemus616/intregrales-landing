@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
@@ -11,13 +11,33 @@ const navLinks = [
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  const { scrollY } = useScroll();
+  const backgroundColor = useTransform(
+    scrollY,
+    [0, 100],
+    ["rgba(255, 255, 255, 0)", "rgba(255, 255, 255, 0.95)"]
+  );
+  const borderColor = useTransform(
+    scrollY,
+    [0, 100],
+    ["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 0.08)"]
+  );
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50 glass-card"
+      style={{ backgroundColor, borderBottomColor: borderColor, borderBottomWidth: 1 }}
+      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md"
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
@@ -38,7 +58,7 @@ export const Navbar = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 + 0.3 }}
-                className="text-muted-foreground hover:text-primary transition-colors duration-300 font-medium"
+                className="text-muted-foreground hover:text-accent transition-colors duration-300 font-medium"
               >
                 {link.name}
               </motion.a>
@@ -80,7 +100,7 @@ export const Navbar = () => {
                     key={link.name}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="text-muted-foreground hover:text-primary transition-colors duration-300 font-medium"
+                    className="text-muted-foreground hover:text-accent transition-colors duration-300 font-medium"
                   >
                     {link.name}
                   </a>
