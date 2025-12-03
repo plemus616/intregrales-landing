@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { Linkedin, Facebook, Instagram } from "lucide-react";
 
 const socialLinks = [
@@ -37,10 +38,18 @@ const footerLinks = [
 ];
 
 export const Footer = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
   return (
-    <footer className="py-16 border-t border-border">
+    <footer ref={ref} className="py-16 border-t border-border bg-background">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12"
+        >
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <motion.a
@@ -60,7 +69,7 @@ export const Footer = () => {
                   key={social.label}
                   href={social.href}
                   whileHover={{ scale: 1.1, y: -2 }}
-                  className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center hover:bg-primary/20 transition-colors"
+                  className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-accent/20 transition-colors text-foreground"
                   aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5" />
@@ -70,26 +79,36 @@ export const Footer = () => {
           </div>
 
           {/* Links Columns */}
-          {footerLinks.map((column) => (
-            <div key={column.title}>
-              <h4 className="font-semibold mb-4">{column.title}</h4>
+          {footerLinks.map((column, i) => (
+            <motion.div
+              key={column.title}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.2 + i * 0.1 }}
+            >
+              <h4 className="font-semibold mb-4 text-foreground">{column.title}</h4>
               <ul className="space-y-3">
                 {column.links.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-muted-foreground hover:text-accent transition-colors"
                     >
                       {link.name}
                     </a>
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ delay: 0.5 }}
+          className="pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4"
+        >
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Servicios Integrales de Reclutamiento. 
             Todos los derechos reservados.
@@ -97,7 +116,7 @@ export const Footer = () => {
           <p className="text-sm text-muted-foreground">
             Diseñado con excelencia
           </p>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );
