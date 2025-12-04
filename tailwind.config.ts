@@ -27,6 +27,7 @@ export default {
           DEFAULT: "hsl(var(--teal))",
           light: "hsl(var(--teal-light))",
           dark: "hsl(var(--teal-dark))",
+          muted: "hsl(var(--teal-muted))",
         },
         navy: {
           DEFAULT: "hsl(var(--navy))",
