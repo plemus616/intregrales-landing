@@ -25,8 +25,10 @@ export const Hero = () => {
       <motion.div className="absolute inset-0" style={{ y }}>
         <img
           src={heroBg}
-          alt="Equipo profesional"
+          alt="Equipo profesional de recursos humanos en Servicios Integrales de Reclutamiento Guatemala - Expertos en selección de talento"
           className="w-full h-full object-cover scale-110"
+          loading="eager"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/60" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30" />

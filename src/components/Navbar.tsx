@@ -45,8 +45,16 @@ export const Navbar = () => {
           <motion.a
             href="#inicio"
             whileHover={{ scale: 1.02 }}
+            aria-label="Ir a inicio - Servicios Integrales de Reclutamiento"
           >
-            <img src={logoSir} alt="Servicios Integrales de Reclutamiento" className="h-10 w-auto" />
+            <img
+              src={logoSir}
+              alt="Logo de Servicios Integrales de Reclutamiento (SIR) Guatemala"
+              className="h-10 w-auto"
+              width="auto"
+              height="40"
+              loading="eager"
+            />
           </motion.a>
 
           {/* Desktop Navigation */}
@@ -80,6 +88,8 @@ export const Navbar = () => {
           <button
             className="md:hidden text-foreground"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
+            aria-expanded={isOpen}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

@@ -166,7 +166,14 @@ export const About = () => {
                     transition={{ delay: 0.6, type: "spring", stiffness: 200 }}
                     className="w-32 h-32 mx-auto mb-6"
                   >
-                    <img src={logoSir} alt="SIR Logo" className="w-full h-full object-contain" />
+                    <img
+                      src={logoSir}
+                      alt="Logo de Servicios Integrales de Reclutamiento (SIR) Guatemala - Empresa líder en recursos humanos"
+                      className="w-full h-full object-contain"
+                      loading="lazy"
+                      width="128"
+                      height="128"
+                    />
                   </motion.div>
                   
                   <motion.h3 

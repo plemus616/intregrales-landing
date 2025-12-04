@@ -7,19 +7,19 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Teléfono",
-    value: "+52 (55) 1234-5678",
-    href: "tel:+525512345678",
+    value: "+502 1234-5678",
+    href: "tel:+50212345678",
   },
   {
     icon: Mail,
     label: "Email",
-    value: "contacto@sir-rh.com",
-    href: "mailto:contacto@sir-rh.com",
+    value: "contacto@sir.com.gt",
+    href: "mailto:contacto@sir.com.gt",
   },
   {
     icon: MapPin,
     label: "Ubicación",
-    value: "Ciudad de México, México",
+    value: "Guatemala, Guatemala",
     href: "#",
   },
 ];
@@ -192,7 +192,7 @@ export const Contact = () => {
                 a la medida de sus necesidades específicas.
               </p>
               <motion.a
-                href="tel:+525512345678"
+                href="tel:+50212345678"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center gap-2 text-accent font-semibold"
