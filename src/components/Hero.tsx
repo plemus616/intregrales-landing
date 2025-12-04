@@ -74,7 +74,7 @@ export const Hero = () => {
               href="#contacto"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="group px-8 py-4 bg-gradient-gold text-primary-foreground rounded-lg font-semibold inline-flex items-center gap-2 glow-gold"
+              className="group px-8 py-4 bg-gradient-teal text-accent-foreground rounded-lg font-semibold inline-flex items-center gap-2 glow-teal"
             >
               Comienza Ahora
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
