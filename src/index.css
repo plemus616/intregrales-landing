@@ -24,7 +24,7 @@
     --muted: 220 15% 95%;
     --muted-foreground: 220 10% 45%;
 
-    --accent: 181 26% 45%;
+    --accent: 181 25% 47%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -36,10 +36,11 @@
 
     --radius: 0.75rem;
 
-    /* Custom tokens */
-    --teal: 181 26% 45%;
+    /* Custom tokens - Teal palette based on #A5C9CA */
+    --teal: 181 25% 47%;
     --teal-light: 181 26% 72%;
     --teal-dark: 181 30% 35%;
+    --teal-muted: 181 20% 85%;
     --navy: 222 47% 20%;
     --navy-dark: 222 47% 11%;
     --navy-light: 222 30% 35%;
@@ -62,11 +63,11 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-navy to-accent;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-teal-dark to-teal;
   }
 
   .bg-gradient-teal {
-    background: linear-gradient(135deg, hsl(var(--teal)) 0%, hsl(var(--teal-light)) 100%);
+    background: linear-gradient(135deg, hsl(var(--teal-dark)) 0%, hsl(var(--teal)) 100%);
   }
 
   .bg-gradient-navy {
@@ -78,10 +79,10 @@
   }
 
   .glow-teal {
-    box-shadow: 0 8px 30px -10px hsl(var(--teal) / 0.4);
+    box-shadow: 0 8px 30px -10px hsl(var(--teal) / 0.5);
   }
 
   .glow-teal-sm {
-    box-shadow: 0 4px 20px -5px hsl(var(--teal) / 0.3);
+    box-shadow: 0 4px 20px -5px hsl(var(--teal) / 0.4);
   }
 }
