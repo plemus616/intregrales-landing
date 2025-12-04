@@ -32,11 +32,8 @@ export const sendContactEmail = async (data: EmailData): Promise<EmailResponse> 
                 <tr>
                   <td style="background: linear-gradient(135deg, #5B9FA0 0%, #A5C9CA 100%); padding: 40px 30px; text-align: center;">
                     <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 600; letter-spacing: -0.5px;">
-                      SIR Integrales
+                       Nueva Solicitud de Contacto
                     </h1>
-                    <p style="margin: 8px 0 0 0; color: #ffffff; font-size: 14px; opacity: 0.95;">
-                      Nueva Solicitud de Contacto
-                    </p>
                   </td>
                 </tr>
 
@@ -115,7 +112,7 @@ ${data.message}
 <tr>
   <td style="background: linear-gradient(135deg, #5B9FA0 0%, #A5C9CA 100%); padding: 35px 30px; text-align: center;">
     <h2 style="margin: 0; color: #ffffff; font-size: 20px; font-weight: 600; letter-spacing: -0.3px;">
-      SIR - Soluciones de Reclutamiento
+      Soluciones Integrales de Reclutamiento
     </h2>
   </td>
 </tr>
@@ -134,7 +131,7 @@ ${data.message}
         subject: `Nuevo contacto de ${data.name} - ${data.company || 'Sin empresa'}`,
         html: emailBody,
         text: `Nombre: ${data.name}\nEmail: ${data.email}\nEmpresa: ${data.company || 'No especificada'}\n\nMensaje:\n${data.message}`,
-        from: `Contacto Web <mailgun@sir.com.gt>`
+        from: `Nueva solicitud de contacto <system@sir.com.gt>`
       }),
     });
 
