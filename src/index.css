@@ -24,8 +24,8 @@
     --muted: 220 15% 95%;
     --muted-foreground: 220 10% 45%;
 
-    --accent: 38 92% 50%;
-    --accent-foreground: 222 47% 11%;
+    --accent: 181 26% 45%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
@@ -37,8 +37,9 @@
     --radius: 0.75rem;
 
     /* Custom tokens */
-    --gold: 38 92% 50%;
-    --gold-light: 38 85% 58%;
+    --teal: 181 26% 45%;
+    --teal-light: 181 26% 72%;
+    --teal-dark: 181 30% 35%;
     --navy: 222 47% 20%;
     --navy-dark: 222 47% 11%;
     --navy-light: 222 30% 35%;
@@ -64,8 +65,8 @@
     @apply bg-clip-text text-transparent bg-gradient-to-r from-navy to-accent;
   }
 
-  .bg-gradient-gold {
-    background: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--gold-light)) 100%);
+  .bg-gradient-teal {
+    background: linear-gradient(135deg, hsl(var(--teal)) 0%, hsl(var(--teal-light)) 100%);
   }
 
   .bg-gradient-navy {
@@ -76,11 +77,11 @@
     @apply bg-card/80 backdrop-blur-xl border border-border shadow-sm;
   }
 
-  .glow-gold {
-    box-shadow: 0 8px 30px -10px hsl(var(--gold) / 0.4);
+  .glow-teal {
+    box-shadow: 0 8px 30px -10px hsl(var(--teal) / 0.4);
   }
 
-  .glow-gold-sm {
-    box-shadow: 0 4px 20px -5px hsl(var(--gold) / 0.3);
+  .glow-teal-sm {
+    box-shadow: 0 4px 20px -5px hsl(var(--teal) / 0.3);
   }
 }
