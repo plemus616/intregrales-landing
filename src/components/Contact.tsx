@@ -210,7 +210,7 @@ export const Contact = () => {
                 a la medida de sus necesidades específicas.
               </p>
               <motion.a
-                href="tel:+50212345678"
+                href="tel:+50255558915"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center gap-2 text-accent font-semibold"
