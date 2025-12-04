@@ -70,7 +70,7 @@ export const Navbar = () => {
               transition={{ delay: 0.7 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 py-2.5 bg-gradient-gold text-primary-foreground rounded-lg font-semibold glow-gold-sm"
+              className="px-6 py-2.5 bg-gradient-teal text-accent-foreground rounded-lg font-semibold glow-teal-sm"
             >
               Contáctanos
             </motion.a>
@@ -108,7 +108,7 @@ export const Navbar = () => {
                 <a
                   href="#contacto"
                   onClick={() => setIsOpen(false)}
-                  className="px-6 py-2.5 bg-gradient-gold text-primary-foreground rounded-lg font-semibold text-center"
+                  className="px-6 py-2.5 bg-gradient-teal text-accent-foreground rounded-lg font-semibold text-center"
                 >
                   Contáctanos
                 </a>

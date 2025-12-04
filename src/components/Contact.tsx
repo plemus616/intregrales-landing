@@ -144,7 +144,7 @@ export const Contact = () => {
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full py-4 bg-gradient-gold text-primary-foreground rounded-lg font-semibold inline-flex items-center justify-center gap-2 glow-gold-sm"
+                className="w-full py-4 bg-gradient-teal text-accent-foreground rounded-lg font-semibold inline-flex items-center justify-center gap-2 glow-teal-sm"
               >
                 Enviar Mensaje
                 <Send className="w-5 h-5" />
