@@ -7,14 +7,14 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Teléfono",
-    value: "+502 1234-5678",
-    href: "tel:+50212345678",
+    value: "+502 5555-8915",
+    href: "tel:+50255558915",
   },
   {
     icon: Mail,
     label: "Email",
-    value: "contacto@sir.com.gt",
-    href: "mailto:contacto@sir.com.gt",
+    value: "empleos@sir.com.gt",
+    href: "mailto:empleos@sir.com.gt",
   },
   {
     icon: MapPin,
