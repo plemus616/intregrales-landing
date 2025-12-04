@@ -111,21 +111,14 @@ ${data.message}
                   </td>
                 </tr>
 
-                <!-- Footer -->
-                <tr>
-                  <td style="padding: 30px; background-color: #2A3D5A; text-align: center;">
-                    <p style="margin: 0; color: #A5C9CA; font-size: 14px; font-weight: 500;">
-                      SIR Integrales - Soluciones de Reclutamiento
-                    </p>
-                    <p style="margin: 8px 0 0 0; color: #8899aa; font-size: 12px;">
-                      Guatemala, Guatemala | empleos@sir.com.gt
-                    </p>
-                  </td>
-                </tr>
-
-              </table>
-            </td>
-          </tr>
+                <!-- Footer con el mismo gradiente que el header -->
+<tr>
+  <td style="background: linear-gradient(135deg, #5B9FA0 0%, #A5C9CA 100%); padding: 35px 30px; text-align: center;">
+    <h2 style="margin: 0; color: #ffffff; font-size: 20px; font-weight: 600; letter-spacing: -0.3px;">
+      SIR - Soluciones de Reclutamiento
+    </h2>
+  </td>
+</tr>
         </table>
       </body>
       </html>
