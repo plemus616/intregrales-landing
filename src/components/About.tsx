@@ -13,14 +13,42 @@ const features = [
 ];
 
 const featureVariants = {
-  hidden: { opacity: 0, x: -30 },
+  hidden: { opacity: 0, x: -40, scale: 0.95 },
   visible: (i: number) => ({
     opacity: 1,
     x: 0,
+    scale: 1,
     transition: {
-      delay: 0.3 + i * 0.1,
-      duration: 0.5,
+      delay: 0.4 + i * 0.12,
+      duration: 0.6,
+      ease: [0.25, 0.46, 0.45, 0.94] as const,
+    },
+  }),
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 100, rotateY: -10 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    rotateY: 0,
+    transition: {
+      duration: 0.9,
       ease: "easeOut" as const,
+    },
+  },
+};
+
+const statVariants = {
+  hidden: { opacity: 0, scale: 0.5 },
+  visible: (i: number) => ({
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delay: 0.8 + i * 0.15,
+      duration: 0.5,
+      type: "spring" as const,
+      stiffness: 200,
     },
   }),
 };
@@ -57,23 +85,38 @@ export const About = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Content */}
           <motion.div
-            initial={{ opacity: 0, x: -60 }}
+            initial={{ opacity: 0, x: -80 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            <span className="inline-block px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent font-medium text-sm mb-4">
+            <motion.span 
+              initial={{ opacity: 0, y: 20, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+              transition={{ duration: 0.6 }}
+              className="inline-block px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent font-medium text-sm mb-4"
+            >
               Sobre Nosotros
-            </span>
-            <h2 className="text-3xl md:text-5xl font-display font-bold mb-6 text-foreground">
+            </motion.span>
+            <motion.h2 
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="text-3xl md:text-5xl font-display font-bold mb-6 text-foreground"
+            >
               Su Aliado Estratégico en{" "}
               <span className="text-gradient">Capital Humano</span>
-            </h2>
-            <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="text-muted-foreground text-lg mb-8 leading-relaxed"
+            >
               En <strong className="text-foreground">Servicios Integrales de Reclutamiento</strong>, 
               nos dedicamos a conectar el talento excepcional con las oportunidades adecuadas. 
               Nuestra misión es ser el puente que une a los mejores profesionales con empresas 
               que valoran el capital humano como su activo más importante.
-            </p>
+            </motion.p>
 
             <div className="grid sm:grid-cols-2 gap-4 mb-8">
               {features.map((feature, index) => (
@@ -103,31 +146,45 @@ export const About = () => {
 
           {/* Right Column - Visual */}
           <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            variants={cardVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
             style={{ y: cardY }}
-            className="relative"
+            className="relative perspective-1000"
           >
             <div className="relative">
               {/* Main Card */}
-              <div className="bg-card rounded-3xl p-10 border border-border shadow-xl">
+              <motion.div 
+                className="bg-card rounded-3xl p-10 border border-border shadow-xl"
+                whileHover={{ scale: 1.02, rotateY: 2 }}
+                transition={{ duration: 0.3 }}
+              >
                 <div className="text-center">
                   <motion.div
-                    initial={{ scale: 0 }}
-                    animate={isInView ? { scale: 1 } : {}}
-                    transition={{ delay: 0.5, type: "spring" }}
+                    initial={{ scale: 0, rotate: -180 }}
+                    animate={isInView ? { scale: 1, rotate: 0 } : {}}
+                    transition={{ delay: 0.6, type: "spring", stiffness: 200 }}
                     className="w-32 h-32 mx-auto mb-6"
                   >
                     <img src={logoSir} alt="SIR Logo" className="w-full h-full object-contain" />
                   </motion.div>
                   
-                  <h3 className="text-2xl font-display font-bold mb-2 text-foreground">
+                  <motion.h3 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ delay: 0.7 }}
+                    className="text-2xl font-display font-bold mb-2 text-foreground"
+                  >
                     Servicios Integrales de Reclutamiento
-                  </h3>
-                  <p className="text-muted-foreground mb-8">
+                  </motion.h3>
+                  <motion.p 
+                    initial={{ opacity: 0 }}
+                    animate={isInView ? { opacity: 1 } : {}}
+                    transition={{ delay: 0.8 }}
+                    className="text-muted-foreground mb-8"
+                  >
                     Excelencia en gestión del talento humano
-                  </p>
+                  </motion.p>
 
                   <div className="grid grid-cols-3 gap-4">
                     {[
@@ -137,10 +194,12 @@ export const About = () => {
                     ].map((stat, i) => (
                       <motion.div
                         key={stat.label}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={isInView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ delay: 0.7 + i * 0.1 }}
-                        className="text-center p-4 rounded-xl bg-muted"
+                        custom={i}
+                        variants={statVariants}
+                        initial="hidden"
+                        animate={isInView ? "visible" : "hidden"}
+                        whileHover={{ scale: 1.1, y: -5 }}
+                        className="text-center p-4 rounded-xl bg-muted cursor-default"
                       >
                         <p className="text-2xl font-bold text-gradient">{stat.value}</p>
                         <p className="text-xs text-muted-foreground">{stat.label}</p>
@@ -148,22 +207,32 @@ export const About = () => {
                     ))}
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Floating Elements */}
               <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                animate={isInView ? { opacity: 1, x: 0, y: [0, -10, 0] } : {}}
+                transition={{ 
+                  opacity: { delay: 1 },
+                  x: { delay: 1 },
+                  y: { duration: 4, repeat: Infinity, delay: 1 }
+                }}
                 className="absolute -top-6 -right-6 bg-card rounded-xl p-4 border border-accent/30 shadow-lg"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity }}
               >
                 <p className="text-sm font-semibold text-foreground">⭐ 4.9/5</p>
                 <p className="text-xs text-muted-foreground">Satisfacción</p>
               </motion.div>
 
               <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={isInView ? { opacity: 1, x: 0, y: [0, 10, 0] } : {}}
+                transition={{ 
+                  opacity: { delay: 1.2 },
+                  x: { delay: 1.2 },
+                  y: { duration: 5, repeat: Infinity, delay: 1.2 }
+                }}
                 className="absolute -bottom-4 -left-4 bg-card rounded-xl p-4 border border-accent/30 shadow-lg"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 5, repeat: Infinity }}
               >
                 <p className="text-sm font-semibold text-accent">98%</p>
                 <p className="text-xs text-muted-foreground">Tasa de Éxito</p>
