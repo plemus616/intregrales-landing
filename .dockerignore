@@ -1,0 +1,46 @@
+# Dependencies
+node_modules
+npm-debug.log
+package-lock.json
+bun.lockb
+
+# Build output
+dist
+.vite
+
+# Development
+.git
+.gitignore
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Documentation
+README.md
+SEO-README.md
+*.md
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Testing
+coverage
+.nyc_output
+
+# Misc
+.claude
