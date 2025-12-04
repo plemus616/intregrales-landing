@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import logoSir from "@/assets/logo-sir.png";
 
 const navLinks = [
   { name: "Inicio", href: "#inicio" },
@@ -48,11 +47,11 @@ export const Navbar = () => {
             aria-label="Ir a inicio - Servicios Integrales de Reclutamiento"
           >
             <img
-              src={logoSir}
+              src="/logo.png"
               alt="Logo de Servicios Integrales de Reclutamiento (SIR) Guatemala"
-              className="h-10 w-auto"
-              width="auto"
-              height="40"
+              className="h-24 w-auto"
+              width="630"
+              height="396"
               loading="eager"
             />
           </motion.a>

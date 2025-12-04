@@ -54,13 +54,20 @@ export const Footer = () => {
           <div className="lg:col-span-2">
             <motion.a
               href="#inicio"
-              className="text-3xl font-display font-bold text-gradient inline-block mb-4"
+              className="inline-block mb-4"
               whileHover={{ scale: 1.02 }}
             >
-              SIR
+              <img
+                src="/logo.png"
+                alt="Logo de Servicios Integrales de Reclutamiento (SIR) Guatemala"
+                className="h-20 w-auto"
+                width="auto"
+                height="80"
+                loading="lazy"
+              />
             </motion.a>
             <p className="text-muted-foreground mb-6 max-w-xs">
-              Servicios Integrales de Reclutamiento - Su socio estratégico en 
+              Servicios Integrales de Reclutamiento - Su socio estratégico en
               la búsqueda del mejor talento humano.
             </p>
             <div className="flex gap-4">

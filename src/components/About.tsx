@@ -1,7 +1,6 @@
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { CheckCircle2 } from "lucide-react";
-import logoSir from "@/assets/logo-sir.png";
 
 const features = [
   "Más de 15 años de experiencia en el mercado",
@@ -164,15 +163,15 @@ export const About = () => {
                     initial={{ scale: 0, rotate: -180 }}
                     animate={isInView ? { scale: 1, rotate: 0 } : {}}
                     transition={{ delay: 0.6, type: "spring", stiffness: 200 }}
-                    className="w-32 h-32 mx-auto mb-6"
+                    className="w-64 h-64 mx-auto mb-6"
                   >
                     <img
-                      src={logoSir}
+                      src="/logo.png"
                       alt="Logo de Servicios Integrales de Reclutamiento (SIR) Guatemala - Empresa líder en recursos humanos"
                       className="w-full h-full object-contain"
                       loading="lazy"
-                      width="128"
-                      height="128"
+                      width="256"
+                      height="256"
                     />
                   </motion.div>
                   
