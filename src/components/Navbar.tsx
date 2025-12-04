@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import logoSir from "@/assets/logo-sir.png";
 
 const navLinks = [
   { name: "Inicio", href: "#inicio" },
@@ -43,10 +44,9 @@ export const Navbar = () => {
         <div className="flex items-center justify-between">
           <motion.a
             href="#inicio"
-            className="text-2xl font-display font-bold text-gradient"
             whileHover={{ scale: 1.02 }}
           >
-            SIR
+            <img src={logoSir} alt="Servicios Integrales de Reclutamiento" className="h-10 w-auto" />
           </motion.a>
 
           {/* Desktop Navigation */}

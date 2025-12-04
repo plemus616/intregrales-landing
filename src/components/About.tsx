@@ -1,6 +1,7 @@
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { CheckCircle2 } from "lucide-react";
+import logoSir from "@/assets/logo-sir.png";
 
 const features = [
   "Más de 15 años de experiencia en el mercado",
@@ -116,9 +117,9 @@ export const About = () => {
                     initial={{ scale: 0 }}
                     animate={isInView ? { scale: 1 } : {}}
                     transition={{ delay: 0.5, type: "spring" }}
-                    className="w-24 h-24 mx-auto rounded-2xl bg-gradient-teal flex items-center justify-center mb-6 glow-teal"
+                    className="w-32 h-32 mx-auto mb-6"
                   >
-                    <span className="text-4xl font-display font-bold text-primary-foreground">SIR</span>
+                    <img src={logoSir} alt="SIR Logo" className="w-full h-full object-contain" />
                   </motion.div>
                   
                   <h3 className="text-2xl font-display font-bold mb-2 text-foreground">
