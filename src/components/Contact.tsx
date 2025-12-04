@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Send, Phone, Mail, MapPin } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import { sendContactEmail } from "@/services/api";
 
 const contactInfo = [
   {
@@ -50,14 +51,30 @@ export const Contact = () => {
     company: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Mensaje enviado",
-      description: "Nos pondremos en contacto contigo pronto.",
-    });
-    setFormData({ name: "", email: "", company: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      await sendContactEmail(formData);
+
+      toast({
+        title: "Mensaje enviado",
+        description: "Nos pondremos en contacto contigo pronto.",
+      });
+
+      setFormData({ name: "", email: "", company: "", message: "" });
+    } catch (error) {
+      toast({
+        title: "Error al enviar",
+        description: "Hubo un problema al enviar el mensaje. Por favor intenta de nuevo.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -142,11 +159,12 @@ export const Contact = () => {
 
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full py-4 bg-gradient-teal text-accent-foreground rounded-lg font-semibold inline-flex items-center justify-center gap-2 glow-teal-sm"
+                disabled={isSubmitting}
+                whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                className="w-full py-4 bg-gradient-teal text-accent-foreground rounded-lg font-semibold inline-flex items-center justify-center gap-2 glow-teal-sm disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Enviar Mensaje
+                {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
                 <Send className="w-5 h-5" />
               </motion.button>
             </form>
