@@ -94,7 +94,7 @@ export const About = () => {
               href="#contacto"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex px-8 py-4 bg-gradient-gold text-primary-foreground rounded-lg font-semibold glow-gold-sm"
+              className="inline-flex px-8 py-4 bg-gradient-teal text-accent-foreground rounded-lg font-semibold glow-teal-sm"
             >
               Trabaja con Nosotros
             </motion.a>
@@ -116,7 +116,7 @@ export const About = () => {
                     initial={{ scale: 0 }}
                     animate={isInView ? { scale: 1 } : {}}
                     transition={{ delay: 0.5, type: "spring" }}
-                    className="w-24 h-24 mx-auto rounded-2xl bg-gradient-gold flex items-center justify-center mb-6 glow-gold"
+                    className="w-24 h-24 mx-auto rounded-2xl bg-gradient-teal flex items-center justify-center mb-6 glow-teal"
                   >
                     <span className="text-4xl font-display font-bold text-primary-foreground">SIR</span>
                   </motion.div>
