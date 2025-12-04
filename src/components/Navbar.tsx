@@ -49,7 +49,7 @@ export const Navbar = () => {
             <img
               src="/logo.png"
               alt="Logo de Servicios Integrales de Reclutamiento (SIR) Guatemala"
-              className="h-24 w-auto"
+              className="h-14 sm:h-16 md:h-20 lg:h-24 w-auto"
               width="630"
               height="396"
               loading="eager"
