@@ -154,7 +154,7 @@ export const About = () => {
             <div className="relative">
               {/* Main Card */}
               <motion.div 
-                className="bg-card rounded-3xl p-10 border border-border shadow-xl"
+                className="bg-card rounded-3xl p-6 sm:p-10 border border-border shadow-xl"
                 whileHover={{ scale: 1.02, rotateY: 2 }}
                 transition={{ duration: 0.3 }}
               >
@@ -163,7 +163,7 @@ export const About = () => {
                     initial={{ scale: 0, rotate: -180 }}
                     animate={isInView ? { scale: 1, rotate: 0 } : {}}
                     transition={{ delay: 0.6, type: "spring", stiffness: 200 }}
-                    className="w-64 h-64 mx-auto mb-6"
+                    className="w-32 h-32 sm:w-64 sm:h-64 mx-auto mb-4 sm:mb-6"
                   >
                     <img
                       src="/logo.png"
@@ -179,7 +179,7 @@ export const About = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ delay: 0.7 }}
-                    className="text-2xl font-display font-bold mb-2 text-foreground"
+                    className="text-xl sm:text-2xl font-display font-bold mb-2 text-foreground"
                   >
                     Servicios Integrales de Reclutamiento
                   </motion.h3>
@@ -187,15 +187,15 @@ export const About = () => {
                     initial={{ opacity: 0 }}
                     animate={isInView ? { opacity: 1 } : {}}
                     transition={{ delay: 0.8 }}
-                    className="text-muted-foreground mb-8"
+                    className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-8"
                   >
                     Excelencia en gestión del talento humano
                   </motion.p>
 
-                  <div className="grid grid-cols-3 gap-4">
+                  <div className="grid grid-cols-3 gap-2 sm:gap-4">
                     {[
                       { value: "500+", label: "Clientes" },
-                      { value: "10K+", label: "Colocaciones" },
+                      { value: "10K", label: "Colocaciones" },
                       { value: "15+", label: "Años" },
                     ].map((stat, i) => (
                       <motion.div
@@ -205,10 +205,10 @@ export const About = () => {
                         initial="hidden"
                         animate={isInView ? "visible" : "hidden"}
                         whileHover={{ scale: 1.1, y: -5 }}
-                        className="text-center p-4 rounded-xl bg-muted cursor-default"
+                        className="text-center p-2 sm:p-4 rounded-xl bg-muted cursor-default"
                       >
-                        <p className="text-2xl font-bold text-gradient">{stat.value}</p>
-                        <p className="text-xs text-muted-foreground">{stat.label}</p>
+                        <p className="text-lg sm:text-2xl font-bold text-gradient">{stat.value}</p>
+                        <p className="text-[10px] sm:text-xs text-muted-foreground">{stat.label}</p>
                       </motion.div>
                     ))}
                   </div>
