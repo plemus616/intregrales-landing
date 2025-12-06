@@ -3,9 +3,9 @@ import { useRef } from "react";
 import { Linkedin, Facebook, Instagram } from "lucide-react";
 
 const socialLinks = [
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/servicios-integrales-de-reclutamiento/", label: "LinkedIn" },
+  { icon: Facebook, href: "https://www.facebook.com/share/17Zr4x54UY/", label: "Facebook" },
+  { icon: Instagram, href: "https://www.instagram.com/serviciosdereclutamiento.gt?igsh=MTBmOXhxaW0yamVpYg==", label: "Instagram" },
 ];
 
 const footerLinks = [
