@@ -22,17 +22,7 @@ const footerLinks = [
     title: "Empresa",
     links: [
       { name: "Sobre Nosotros", href: "#nosotros" },
-      { name: "Nuestro Equipo", href: "#nosotros" },
-      { name: "Testimonios", href: "#" },
-      { name: "Blog", href: "#" },
-    ],
-  },
-  {
-    title: "Legal",
-    links: [
-      { name: "Aviso de Privacidad", href: "#" },
-      { name: "Términos de Servicio", href: "#" },
-      { name: "Política de Cookies", href: "#" },
+      { name: "Contacto", href: "#contacto" },
     ],
   },
 ];
@@ -114,14 +104,11 @@ export const Footer = () => {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 0.5 }}
-          className="pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4"
+          className="pt-8 border-t border-border flex justify-center items-center"
         >
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Servicios Integrales de Reclutamiento. 
             Todos los derechos reservados.
-          </p>
-          <p className="text-sm text-muted-foreground">
-            Diseñado con excelencia
           </p>
         </motion.div>
       </div>
