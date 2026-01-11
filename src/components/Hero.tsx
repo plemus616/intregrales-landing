@@ -4,9 +4,9 @@ import { useRef } from "react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const stats = [
-  { icon: Users, value: "500+", label: "Empresas confían en nosotros" },
-  { icon: Target, value: "98%", label: "Tasa de éxito" },
-  { icon: Award, value: "15+", label: "Años de experiencia" },
+  { icon: Users, value: "Empresas", label: "Confían en nosotros" },
+  { icon: Target, value: "Alta", label: "Tasa de éxito" },
+  { icon: Award, value: "Experiencia", label: "Comprobada" },
 ];
 
 export const Hero = () => {
@@ -62,8 +62,7 @@ export const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl"
           >
-            Su socio estratégico en la búsqueda y selección del mejor talento humano. 
-            Conectamos empresas con los profesionales ideales para impulsar su crecimiento.
+            Reclutamiento estratégico donde el talento y la visión empresarial se encuentran.
           </motion.p>
 
           <motion.div
@@ -87,7 +86,7 @@ export const Hero = () => {
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-card border border-border hover:border-accent/50 rounded-lg font-semibold transition-colors text-foreground"
             >
-              Conocer Más
+              Conoce nuestros servicios
             </motion.a>
           </motion.div>
 

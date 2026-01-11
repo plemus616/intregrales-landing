@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { CheckCircle2 } from "lucide-react";
 
 const features = [
-  "Más de 15 años de experiencia en el mercado",
+  "Amplia experiencia en el mercado",
   "Equipo multidisciplinario de especialistas",
   "Metodologías innovadoras de evaluación",
   "Red de contactos en múltiples industrias",
@@ -105,16 +105,30 @@ export const About = () => {
               Su Aliado Estratégico en{" "}
               <span className="text-gradient">Capital Humano</span>
             </motion.h2>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-muted-foreground text-lg mb-8 leading-relaxed"
+              className="text-muted-foreground text-lg mb-6 leading-relaxed"
             >
-              En <strong className="text-foreground">Servicios Integrales de Reclutamiento</strong>, 
-              nos dedicamos a conectar el talento excepcional con las oportunidades adecuadas. 
-              Nuestra misión es ser el puente que une a los mejores profesionales con empresas 
-              que valoran el capital humano como su activo más importante.
+              Somos un equipo de profesionales enfocados hacia un mismo objetivo: brindar soluciones
+              estratégicas a las corporaciones que buscan competitividad y eficiencia en el mercado
+              que día a día es cada vez más exigente, y que el personal calificado le dará el plus
+              para alcanzar sus metas.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="text-muted-foreground text-base mb-8 leading-relaxed"
+            >
+              Las empresas suelen enfrentar procesos de reclutamiento largos, costosos y poco efectivos,
+              que resultan en contrataciones incorrectas, alta rotación y pérdida de productividad.
+              La falta de tiempo, metodología y conocimiento del mercado dificulta encontrar talento
+              verdaderamente alineado al puesto y a la cultura organizacional. Nosotros resolvemos ese
+              problema optimizando el proceso de atracción y selección, asegurando contrataciones
+              acertadas desde el inicio.
             </motion.p>
 
             <div className="grid sm:grid-cols-2 gap-4 mb-8">
@@ -194,9 +208,9 @@ export const About = () => {
 
                   <div className="grid grid-cols-3 gap-2 sm:gap-4">
                     {[
-                      { value: "500+", label: "Clientes" },
-                      { value: "10K", label: "Colocaciones" },
-                      { value: "15+", label: "Años" },
+                      { value: "Múltiples", label: "Clientes" },
+                      { value: "Exitosas", label: "Colocaciones" },
+                      { value: "Amplia", label: "Experiencia" },
                     ].map((stat, i) => (
                       <motion.div
                         key={stat.label}
@@ -219,28 +233,28 @@ export const About = () => {
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 animate={isInView ? { opacity: 1, x: 0, y: [0, -10, 0] } : {}}
-                transition={{ 
+                transition={{
                   opacity: { delay: 1 },
                   x: { delay: 1 },
                   y: { duration: 4, repeat: Infinity, delay: 1 }
                 }}
                 className="absolute -top-6 -right-6 bg-card rounded-xl p-4 border border-accent/30 shadow-lg"
               >
-                <p className="text-sm font-semibold text-foreground">⭐ 4.9/5</p>
+                <p className="text-sm font-semibold text-foreground">⭐ Excelente</p>
                 <p className="text-xs text-muted-foreground">Satisfacción</p>
               </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 animate={isInView ? { opacity: 1, x: 0, y: [0, 10, 0] } : {}}
-                transition={{ 
+                transition={{
                   opacity: { delay: 1.2 },
                   x: { delay: 1.2 },
                   y: { duration: 5, repeat: Infinity, delay: 1.2 }
                 }}
                 className="absolute -bottom-4 -left-4 bg-card rounded-xl p-4 border border-accent/30 shadow-lg"
               >
-                <p className="text-sm font-semibold text-accent">98%</p>
+                <p className="text-sm font-semibold text-accent">Alta</p>
                 <p className="text-xs text-muted-foreground">Tasa de Éxito</p>
               </motion.div>
             </div>

@@ -4,7 +4,7 @@ import { Linkedin, Facebook, Instagram } from "lucide-react";
 
 const socialLinks = [
   { icon: Linkedin, href: "https://www.linkedin.com/company/servicios-integrales-de-reclutamiento/", label: "LinkedIn" },
-  { icon: Facebook, href: "https://www.facebook.com/share/17Zr4x54UY/", label: "Facebook" },
+  { icon: Facebook, href: "https://www.facebook.com/share/17mFMdG21X/", label: "Facebook" },
   { icon: Instagram, href: "https://www.instagram.com/serviciosdereclutamiento.gt?igsh=MTBmOXhxaW0yamVpYg==", label: "Instagram" },
 ];
 
