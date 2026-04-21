@@ -5,9 +5,9 @@ import heroBg from "@/assets/hero-bg.jpg";
 import { CoverageMap } from "@/components/CoverageMap";
 
 const stats = [
-  { icon: Users, value: "Empresas", label: "Confían en nosotros" },
-  { icon: Target, value: "Alta", label: "Tasa de éxito" },
-  { icon: Award, value: "+15 años", label: "De experiencia" },
+  { icon: Users, value: "+200", label: "Empresas atendidas", sub: "en toda Centroamérica" },
+  { icon: Target, value: "95%", label: "Tasa de éxito", sub: "en colocaciones" },
+  { icon: Award, value: "+15", label: "Años de experiencia", sub: "consolidando talento" },
 ];
 
 export const Hero = () => {
@@ -21,12 +21,12 @@ export const Hero = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <section id="inicio" ref={ref} className="relative min-h-screen flex items-center overflow-hidden">
+    <section id="inicio" ref={ref} className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
       {/* Background Image with Parallax */}
       <motion.div className="absolute inset-0" style={{ y }}>
         <img
           src={heroBg}
-          alt="Equipo profesional de recursos humanos en Servicios Integrales de Reclutamiento Guatemala - Expertos en selección de talento"
+          alt="Equipo profesional de recursos humanos en Sir Talent CA - Expertos en selección de talento en Centroamérica"
           className="w-full h-full object-cover scale-110"
           loading="eager"
           fetchPriority="high"
@@ -35,7 +35,7 @@ export const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30" />
       </motion.div>
 
-      <motion.div className="container mx-auto px-6 relative z-10 pt-24" style={{ opacity }}>
+      <motion.div className="container mx-auto px-6 relative z-10" style={{ opacity }}>
         <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -107,8 +107,9 @@ export const Hero = () => {
                 className="glass-card rounded-xl p-6 hover:border-accent/30 transition-all"
               >
                 <stat.icon className="w-8 h-8 text-accent mb-3" />
-                <p className="text-3xl font-bold text-gradient mb-1">{stat.value}</p>
-                <p className="text-sm text-muted-foreground">{stat.label}</p>
+                <p className="text-3xl font-bold text-gradient mb-1 leading-none">{stat.value}</p>
+                <p className="text-sm font-semibold text-foreground mb-0.5">{stat.label}</p>
+                <p className="text-xs text-muted-foreground">{stat.sub}</p>
               </motion.div>
             ))}
           </motion.div>
