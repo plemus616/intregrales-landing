@@ -50,9 +50,9 @@ export const Footer = () => {
               <img
                 src="/logo.png"
                 alt="Logo de Sir Talent CA - Reclutamiento en Centroamérica"
-                className="h-20 w-auto"
+                className="h-32 md:h-40 w-auto"
                 width="auto"
-                height="80"
+                height="160"
                 loading="lazy"
               />
             </motion.a>
