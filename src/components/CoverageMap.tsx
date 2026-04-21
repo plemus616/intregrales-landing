@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import {
   ComposableMap,
   Geographies,
