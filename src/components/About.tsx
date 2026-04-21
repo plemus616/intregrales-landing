@@ -195,7 +195,7 @@ export const About = () => {
                     transition={{ delay: 0.7 }}
                     className="text-xl sm:text-2xl font-display font-bold mb-2 text-foreground"
                   >
-                    Servicios Integrales de Reclutamiento
+                    Sir Talent CA
                   </motion.h3>
                   <motion.p 
                     initial={{ opacity: 0 }}
@@ -210,7 +210,7 @@ export const About = () => {
                     {[
                       { value: "Múltiples", label: "Clientes" },
                       { value: "Exitosas", label: "Colocaciones" },
-                      { value: "Amplia", label: "Experiencia" },
+                      { value: "+15 años", label: "Experiencia" },
                     ].map((stat, i) => (
                       <motion.div
                         key={stat.label}

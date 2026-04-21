@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Search, UserCheck, ClipboardCheck, Briefcase, GraduationCap, Building2 } from "lucide-react";
+import { Search, UserCheck, ClipboardCheck, Briefcase, GraduationCap, Building2, Wallet, Network } from "lucide-react";
 
 const services = [
   {
@@ -32,6 +32,16 @@ const services = [
     icon: Building2,
     title: "Consultoría Organizacional",
     description: "Asesoramos en estructura organizacional, clima laboral y gestión del cambio para optimizar su empresa.",
+  },
+  {
+    icon: Wallet,
+    title: "Payroll",
+    description: "Gestionamos su nómina de forma integral: cálculos salariales, prestaciones, impuestos y reportes, con total precisión y cumplimiento legal en cada país.",
+  },
+  {
+    icon: Network,
+    title: "Outsourcing",
+    description: "Asumimos la administración total de su personal subcontratado, permitiéndole reducir cargas operativas y enfocarse en el core de su negocio sin sacrificar productividad.",
   },
 ];
 

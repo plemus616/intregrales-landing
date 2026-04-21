@@ -44,11 +44,11 @@ export const Navbar = () => {
           <motion.a
             href="#inicio"
             whileHover={{ scale: 1.02 }}
-            aria-label="Ir a inicio - Servicios Integrales de Reclutamiento"
+            aria-label="Ir a inicio - Sir Talent CA"
           >
             <img
               src="/logo.png"
-              alt="Logo de Servicios Integrales de Reclutamiento (SIR) Guatemala"
+              alt="Logo de Sir Talent CA - Reclutamiento en Centroamérica"
               className="h-14 sm:h-16 md:h-20 lg:h-24 w-auto"
               width="630"
               height="396"

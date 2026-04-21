@@ -49,7 +49,7 @@ export const Footer = () => {
             >
               <img
                 src="/logo.png"
-                alt="Logo de Servicios Integrales de Reclutamiento (SIR) Guatemala"
+                alt="Logo de Sir Talent CA - Reclutamiento en Centroamérica"
                 className="h-20 w-auto"
                 width="auto"
                 height="80"
@@ -57,8 +57,8 @@ export const Footer = () => {
               />
             </motion.a>
             <p className="text-muted-foreground mb-6 max-w-xs">
-              Servicios Integrales de Reclutamiento - Su socio estratégico en
-              la búsqueda del mejor talento humano.
+              Sir Talent CA - Su socio estratégico en la búsqueda del mejor
+              talento humano en Centroamérica.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
@@ -107,7 +107,7 @@ export const Footer = () => {
           className="pt-8 border-t border-border flex justify-center items-center"
         >
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Servicios Integrales de Reclutamiento. 
+            © {new Date().getFullYear()} Sir Talent CA.
             Todos los derechos reservados.
           </p>
         </motion.div>
