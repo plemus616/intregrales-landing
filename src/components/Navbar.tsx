@@ -49,7 +49,7 @@ export const Navbar = () => {
             <img
               src="/logo.png"
               alt="Logo de Sir Talent CA - Reclutamiento en Centroamérica"
-              className="h-14 sm:h-16 md:h-20 lg:h-24 w-auto"
+              className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto"
               width="630"
               height="396"
               loading="eager"
