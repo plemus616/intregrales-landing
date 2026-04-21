@@ -2,11 +2,12 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Users, Target, Award } from "lucide-react";
 import { useRef } from "react";
 import heroBg from "@/assets/hero-bg.jpg";
+import { CoverageMap } from "@/components/CoverageMap";
 
 const stats = [
   { icon: Users, value: "Empresas", label: "Confían en nosotros" },
   { icon: Target, value: "Alta", label: "Tasa de éxito" },
-  { icon: Award, value: "Experiencia", label: "Comprobada" },
+  { icon: Award, value: "+15 años", label: "De experiencia" },
 ];
 
 export const Hero = () => {
@@ -52,8 +53,7 @@ export const Hero = () => {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-6 text-foreground"
           >
-            Servicios Integrales de{" "}
-            <span className="text-gradient">Reclutamiento</span>
+            Sir Talent <span className="text-gradient">CA</span>
           </motion.h1>
 
           <motion.p
@@ -113,6 +113,29 @@ export const Hero = () => {
             ))}
           </motion.div>
         </div>
+
+        {/* Coverage Map */}
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.8 }}
+          className="mt-20 lg:mt-28"
+        >
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="inline-block px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent font-medium text-sm mb-4">
+              Cobertura Regional
+            </span>
+            <h2 className="text-2xl md:text-4xl font-display font-bold mb-3 text-foreground">
+              Dominamos el mercado de{" "}
+              <span text-gradient="true" className="text-gradient">Centroamérica</span>
+            </h2>
+            <p className="text-muted-foreground">
+              Operamos en toda la región con base estratégica en Guatemala, conectando
+              talento de élite con las empresas líderes del istmo.
+            </p>
+          </div>
+          <CoverageMap />
+        </motion.div>
       </motion.div>
     </section>
   );
