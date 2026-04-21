@@ -127,7 +127,7 @@ export const Hero = () => {
             </span>
             <h2 className="text-2xl md:text-4xl font-display font-bold mb-3 text-foreground">
               Dominamos el mercado de{" "}
-              <span text-gradient="true" className="text-gradient">Centroamérica</span>
+              <span className="text-gradient">Centroamérica</span>
             </h2>
             <p className="text-muted-foreground">
               Operamos en toda la región con base estratégica en Guatemala, conectando
