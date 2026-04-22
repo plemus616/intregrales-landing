@@ -57,11 +57,11 @@ export const CoverageMap = () => {
         <ComposableMap
           projection="geoMercator"
           projectionConfig={{
-            scale: 1150,
-            center: [-90, 16],
+            scale: 1550,
+            center: [-87, 14.5],
           }}
           width={1000}
-          height={680}
+          height={700}
           style={{ width: "100%", height: "auto" }}
         >
           <Geographies geography={GEO_URL}>
@@ -72,14 +72,14 @@ export const CoverageMap = () => {
                 const isMexico = id === MEXICO_ID;
 
                 if (!isCentralAmerica && !isMexico) {
-                  // Other surrounding countries (sea/neighbors): muted
+                  // Other surrounding countries (sea/neighbors): muted but visible
                   return (
                     <Geography
                       key={geo.rsmKey}
                       geography={geo}
-                      fill="hsl(var(--muted) / 0.4)"
+                      fill="hsl(var(--muted) / 0.7)"
                       stroke="hsl(var(--border))"
-                      strokeWidth={0.5}
+                      strokeWidth={0.6}
                       style={{
                         default: { outline: "none" },
                         hover: { outline: "none" },
@@ -95,18 +95,18 @@ export const CoverageMap = () => {
                     geography={geo}
                     fill={
                       isCentralAmerica
-                        ? "hsl(var(--accent) / 0.65)"
-                        : "hsl(var(--accent) / 0.2)"
+                        ? "hsl(var(--accent))"
+                        : "hsl(var(--accent) / 0.35)"
                     }
-                    stroke="hsl(var(--accent))"
-                    strokeWidth={isCentralAmerica ? 1.6 : 1}
+                    stroke="hsl(var(--accent-foreground) / 0.4)"
+                    strokeWidth={isCentralAmerica ? 1.8 : 1.2}
                     strokeDasharray={isMexico ? "4 3" : undefined}
                     style={{
                       default: { outline: "none" },
                       hover: {
                         fill: isCentralAmerica
                           ? "hsl(var(--accent) / 0.85)"
-                          : "hsl(var(--accent) / 0.35)",
+                          : "hsl(var(--accent) / 0.5)",
                         outline: "none",
                       },
                       pressed: { outline: "none" },
