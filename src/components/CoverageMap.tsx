@@ -44,9 +44,9 @@ const mexicoPin = { name: "México", coords: [-102.5, 23.6] as [number, number] 
 
 export const CoverageMap = () => {
   return (
-    <div className="relative w-full max-w-4xl mx-auto">
+    <div className="relative w-full max-w-6xl mx-auto">
       {/* Glow */}
-      <div className="absolute inset-0 bg-accent/10 blur-3xl rounded-full pointer-events-none" />
+      <div className="absolute inset-0 bg-accent/20 blur-3xl rounded-full pointer-events-none" />
 
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
@@ -57,11 +57,11 @@ export const CoverageMap = () => {
         <ComposableMap
           projection="geoMercator"
           projectionConfig={{
-            scale: 950,
+            scale: 1150,
             center: [-90, 16],
           }}
-          width={800}
-          height={520}
+          width={1000}
+          height={680}
           style={{ width: "100%", height: "auto" }}
         >
           <Geographies geography={GEO_URL}>
@@ -77,9 +77,9 @@ export const CoverageMap = () => {
                     <Geography
                       key={geo.rsmKey}
                       geography={geo}
-                      fill="hsl(var(--muted) / 0.3)"
+                      fill="hsl(var(--muted) / 0.4)"
                       stroke="hsl(var(--border))"
-                      strokeWidth={0.4}
+                      strokeWidth={0.5}
                       style={{
                         default: { outline: "none" },
                         hover: { outline: "none" },
@@ -95,18 +95,18 @@ export const CoverageMap = () => {
                     geography={geo}
                     fill={
                       isCentralAmerica
-                        ? "hsl(var(--accent) / 0.25)"
-                        : "hsl(var(--accent) / 0.08)"
+                        ? "hsl(var(--accent) / 0.65)"
+                        : "hsl(var(--accent) / 0.2)"
                     }
                     stroke="hsl(var(--accent))"
-                    strokeWidth={isCentralAmerica ? 1.2 : 0.8}
-                    strokeDasharray={isMexico ? "3 3" : undefined}
+                    strokeWidth={isCentralAmerica ? 1.6 : 1}
+                    strokeDasharray={isMexico ? "4 3" : undefined}
                     style={{
                       default: { outline: "none" },
                       hover: {
                         fill: isCentralAmerica
-                          ? "hsl(var(--accent) / 0.4)"
-                          : "hsl(var(--accent) / 0.15)",
+                          ? "hsl(var(--accent) / 0.85)"
+                          : "hsl(var(--accent) / 0.35)",
                         outline: "none",
                       },
                       pressed: { outline: "none" },
